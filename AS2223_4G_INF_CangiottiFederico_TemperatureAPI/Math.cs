@@ -6,12 +6,12 @@
         ERROR
     }
 
-    public class MathResponse
+    public class MathResult
     {
         public Status status { get; set; }
         public string message { get; set; }
 
-        public MathResponse(Status status, string message)
+        public MathResult(Status status, string message = "")
         {
             this.status = status;
             this.message = message;
