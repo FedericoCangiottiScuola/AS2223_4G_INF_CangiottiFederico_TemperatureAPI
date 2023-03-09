@@ -28,5 +28,28 @@ namespace AS2223_4G_INF_CangiottiFederico_TemperatureAPI.Controllers
                 outcome,
             });
         }
+
+        [HttpGet("GetDivision")]
+        public JsonResult GetDivision(double numerator, double denominator)
+        {
+            MathResult outcome;
+
+            if (denominator == 0)
+            {
+                outcome = new(Status.ERROR, "The denominator cannot be zero");
+                return Json(new
+                {
+                    result = 0,
+                    outcome,
+                });
+            }
+
+            outcome = new(Status.OK);
+            return Json(new
+            {
+                result = numerator / denominator,
+                outcome,
+            });
+        }
     }
 }
