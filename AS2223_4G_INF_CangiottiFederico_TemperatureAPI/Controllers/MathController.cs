@@ -51,5 +51,18 @@ namespace AS2223_4G_INF_CangiottiFederico_TemperatureAPI.Controllers
                 outcome,
             });
         }
+
+        [HttpGet("GetRandom")]
+        public JsonResult GetRandom(int from, int to)
+        {
+            MathResult outcome = new(Status.OK);
+            Random random = new Random();
+
+            return Json(new
+            {
+                result = random.Next(from, to + 1),
+                outcome,
+            });
+        }
     }
 }
