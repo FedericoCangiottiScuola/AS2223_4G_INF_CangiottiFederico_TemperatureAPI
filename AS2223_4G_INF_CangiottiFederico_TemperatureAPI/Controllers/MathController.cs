@@ -11,7 +11,8 @@ namespace AS2223_4G_INF_CangiottiFederico_TemperatureAPI.Controllers
         public JsonResult GetAddition(int n1, int n2)
         {
             MathResult outcome = new(Status.OK);
-            return Json(new {
+            return Json(new
+            {
                 result = n1 + n2,
                 outcome,
             });
