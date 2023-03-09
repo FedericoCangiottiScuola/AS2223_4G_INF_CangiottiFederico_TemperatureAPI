@@ -17,5 +17,16 @@ namespace AS2223_4G_INF_CangiottiFederico_TemperatureAPI.Controllers
                 outcome,
             });
         }
+
+        [HttpGet("GetMultiply")]
+        public JsonResult GetMultiply(double n1, double n2)
+        {
+            MathResult outcome = new(Status.OK);
+            return Json(new
+            {
+                result = n1 * n2,
+                outcome,
+            });
+        }
     }
 }
