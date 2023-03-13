@@ -58,6 +58,26 @@ namespace AS2223_4G_INF_CangiottiFederico_TemperatureAPI.Controllers
             MathResult outcome = new(Status.OK);
             Random random = new Random();
 
+            if (from > to)
+            {
+                outcome.status = Status.ERROR;
+                outcome.message = "Wrong range parameters";
+                return Json(new
+                {
+                    result = 0,
+                    outcome,
+                });
+            } else if (from == to)
+            {
+                outcome.status = Status.WARNING;
+                outcome.message = "Range values are equal";
+                return Json(new
+                {
+                    result = random.Next(from, to + 1),
+                    outcome,
+                });
+            }
+
             return Json(new
             {
                 result = random.Next(from, to + 1),
