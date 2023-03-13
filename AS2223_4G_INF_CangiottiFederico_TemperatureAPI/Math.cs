@@ -5,7 +5,8 @@ namespace AS2223_4G_INF_CangiottiFederico_TemperatureAPI
     public enum Status
     {
         OK,
-        ERROR
+        ERROR,
+        WARNING
     }
 
     public class MathResult
