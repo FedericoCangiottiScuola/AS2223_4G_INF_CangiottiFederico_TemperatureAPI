@@ -60,8 +60,8 @@ namespace AS2223_4G_INF_CangiottiFederico_TemperatureAPI.Controllers
 
             if (from > to)
             {
-                outcome.status = Status.ERROR;
-                outcome.message = "Wrong range parameters";
+                outcome.Status = Status.ERROR;
+                outcome.Message = "Wrong range parameters";
                 return Json(new
                 {
                     result = 0,
@@ -69,8 +69,8 @@ namespace AS2223_4G_INF_CangiottiFederico_TemperatureAPI.Controllers
                 });
             } else if (from == to)
             {
-                outcome.status = Status.WARNING;
-                outcome.message = "Range values are equal";
+                outcome.Status = Status.WARNING;
+                outcome.Message = "Range values are equal";
                 return Json(new
                 {
                     result = random.Next(from, to + 1),
